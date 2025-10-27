@@ -1,0 +1,212 @@
+/* Estilos para páginas de guías */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #121314 0%, #914141 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.btn-back {
+    display: inline-block;
+    background: #914141;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.btn-back:hover {
+    background: #914141;
+    transform: translateX(-5px);
+}
+
+/* Proyectos */
+.proyecto {
+    background: white;
+    margin: 2rem 0;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.proyecto h2 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #914141;
+    font-size: 1.8rem;
+}
+
+/* Grid de archivos */
+.archivos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.archivo-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.archivo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    border-color: #914141;
+}
+
+.archivo-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.archivo-icon.html {
+    background: linear-gradient(135deg, #e44d26, #f16529);
+}
+
+.archivo-icon.css {
+    background: linear-gradient(135deg, #264de4, #2965f1);
+}
+
+.archivo-icon.js {
+    background: linear-gradient(135deg, #f7df1e, #d4bb0c);
+}
+
+.archivo-card h3 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.btn-ver {
+    display: inline-block;
+    background: #914141;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.btn-ver:hover {
+    background: #5a6fd8;
+    transform: scale(1.05);
+}
+
+/* Estados de los proyectos (como en la imagen) */
+.archivo-card::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.archivo-card.completado::before {
+    background: #4CAF50;
+    box-shadow: 0 0 5px #4CAF50;
+}
+
+.archivo-card.pendiente::before {
+    background: #FF9800;
+    box-shadow: 0 0 5px #FF9800;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .proyecto {
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+    }
+    
+    .archivos-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    header {
+        padding: 1.5rem 0;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .proyecto {
+        padding: 1rem;
+    }
+    
+    .archivo-card {
+        padding: 1.2rem;
+    }
+}
